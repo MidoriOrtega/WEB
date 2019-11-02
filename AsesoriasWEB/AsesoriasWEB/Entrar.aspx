@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <br />
-        Usuario:<asp:TextBox ID="txUsuario" runat="server"></asp:TextBox>
+        Clave única:<asp:TextBox ID="txUsuario" runat="server"></asp:TextBox>
         <br />
         <br />
         Contraseña:<asp:TextBox ID="txContra" runat="server"></asp:TextBox>

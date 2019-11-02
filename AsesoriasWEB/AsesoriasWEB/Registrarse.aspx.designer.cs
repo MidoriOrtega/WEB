@@ -11,7 +11,7 @@ namespace AsesoriasWEB
 {
 
 
-  public partial class Apuntes
+  public partial class Registrarse
   {
 
     /// <summary>
@@ -24,40 +24,67 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
     /// <summary>
-    /// dlDepto control.
+    /// TextBox1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList dlDepto;
+    protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
     /// <summary>
-    /// dlMateria control.
+    /// TextBox2 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList dlMateria;
+    protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
     /// <summary>
-    /// GridView1 control.
+    /// TextBox3 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView1;
+    protected global::System.Web.UI.WebControls.TextBox TextBox3;
 
     /// <summary>
-    /// Button3 control.
+    /// TextBox4 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button Button3;
+    protected global::System.Web.UI.WebControls.TextBox TextBox4;
+
+    /// <summary>
+    /// TextBox5 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox TextBox5;
+
+    /// <summary>
+    /// Correo control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RadioButton Correo;
+
+    /// <summary>
+    /// Teléfono control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RadioButton Teléfono;
 
     /// <summary>
     /// Button1 control.
@@ -76,14 +103,5 @@ namespace AsesoriasWEB
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button Button2;
-
-    /// <summary>
-    /// TextBox1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox1;
   }
 }

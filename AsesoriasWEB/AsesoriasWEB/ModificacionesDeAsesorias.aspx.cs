@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace AsesoriasWEB
 {
-  public partial class Asesorias : System.Web.UI.Page
+  public partial class ModificacionesDeAsesorias : System.Web.UI.Page
   {
     protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
     {
 
     }

@@ -67,15 +67,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AltaMateria.aspx" />
     <Content Include="Apuntes.aspx" />
     <Content Include="Asesorias.aspx" />
+    <Content Include="AsesoriasPendientes.aspx" />
     <Content Include="Entrar.aspx" />
     <Content Include="EscribirResenia.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="ModificacionesDeAsesorias.aspx" />
+    <Content Include="ModificaInformacion.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="SubirApunte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaMateria.aspx.cs">
+      <DependentUpon>AltaMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaMateria.aspx.designer.cs">
+      <DependentUpon>AltaMateria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Apuntes.aspx.cs">
       <DependentUpon>Apuntes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,6 +101,13 @@
     </Compile>
     <Compile Include="Asesorias.aspx.designer.cs">
       <DependentUpon>Asesorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsesoriasPendientes.aspx.cs">
+      <DependentUpon>AsesoriasPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsesoriasPendientes.aspx.designer.cs">
+      <DependentUpon>AsesoriasPendientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entrar.aspx.cs">
       <DependentUpon>Entrar.aspx</DependentUpon>
@@ -111,7 +130,28 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModificacionesDeAsesorias.aspx.cs">
+      <DependentUpon>ModificacionesDeAsesorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificacionesDeAsesorias.aspx.designer.cs">
+      <DependentUpon>ModificacionesDeAsesorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaInformacion.aspx.cs">
+      <DependentUpon>ModificaInformacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificaInformacion.aspx.designer.cs">
+      <DependentUpon>ModificaInformacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SubirApunte.aspx.cs">
       <DependentUpon>SubirApunte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

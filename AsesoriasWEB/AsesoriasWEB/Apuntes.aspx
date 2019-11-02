@@ -23,6 +23,9 @@
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
         <br />
+        <asp:Button ID="Button3" runat="server" Text="Regresar" />
+        <br />
+        <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Subir apunte" />
 &nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" Text="Escribir reseña" />

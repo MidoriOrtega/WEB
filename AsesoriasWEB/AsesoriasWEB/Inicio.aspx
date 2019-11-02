@@ -14,7 +14,7 @@
             </asp:GridView>
             <br />
 &nbsp;
-            <asp:Button ID="btPide" runat="server" Text="Pedir asesoría" />
+            <asp:Button ID="btPide" runat="server" Text="Pedir asesoría" OnClick="btPide_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btPeticiones" runat="server" Text="Peticiones de asesoría pendiente" />
 &nbsp;<br />
@@ -28,6 +28,8 @@
             <br />
 &nbsp;
             <asp:Button ID="Button1" runat="server" Text="Modificar mi información" />
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button2" runat="server" Text="Dar de alta una materia" Width="327px" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Reseñas de asesorías dadas:"></asp:Label>

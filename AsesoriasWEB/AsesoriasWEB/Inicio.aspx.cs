@@ -23,5 +23,10 @@ namespace AsesoriasWEB
     {
 
     }
+
+    protected void btPide_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 }

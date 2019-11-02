@@ -11,7 +11,7 @@ namespace AsesoriasWEB
 {
 
 
-  public partial class Inicio1
+  public partial class ModificacionesDeAsesorias
   {
 
     /// <summary>
@@ -24,49 +24,94 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
     /// <summary>
-    /// GridView1 control.
+    /// DropDownList2 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView1;
+    protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
 
     /// <summary>
-    /// btPide control.
+    /// Label1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btPide;
+    protected global::System.Web.UI.WebControls.Label Label1;
 
     /// <summary>
-    /// btPeticiones control.
+    /// DropDownList1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btPeticiones;
+    protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
     /// <summary>
-    /// btApuntes control.
+    /// lbCorreo control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btApuntes;
+    protected global::System.Web.UI.WebControls.Label lbCorreo;
 
     /// <summary>
-    /// btModificaciones control.
+    /// Label2 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btModificaciones;
+    protected global::System.Web.UI.WebControls.Label Label2;
+
+    /// <summary>
+    /// dlDia control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList dlDia;
+
+    /// <summary>
+    /// dlMes control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList dlMes;
+
+    /// <summary>
+    /// txHora control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txHora;
+
+    /// <summary>
+    /// txLugar control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox txLugar;
+
+    /// <summary>
+    /// dlModalidad control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList dlModalidad;
 
     /// <summary>
     /// Button1 control.
@@ -87,39 +132,21 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.Button Button2;
 
     /// <summary>
-    /// Label1 control.
+    /// Button3 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label1;
+    protected global::System.Web.UI.WebControls.Button Button3;
 
     /// <summary>
-    /// GridView2 control.
+    /// btRegresa control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView2;
-
-    /// <summary>
-    /// Label2 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label2;
-
-    /// <summary>
-    /// GridView3 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView3;
+    protected global::System.Web.UI.WebControls.Button btRegresa;
   }
 }
