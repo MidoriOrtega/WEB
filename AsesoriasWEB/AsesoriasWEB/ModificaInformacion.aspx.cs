@@ -116,10 +116,17 @@ namespace AsesoriasWEB
 
         protected void btCambia_Click(object sender, EventArgs e)
         {
-            if (txCambia.Text == null || txCambia.Text.Equals(""))
-                lbRespM.Text = "Se debe ingresar el nuevo correo/teléfono/contraseña";
-            else
-                lbRespM.Text = modifica(dlCambia.SelectedItem.Text, txCambia.Text);
+            try
+            {
+                if (txCambia.Text == null || txCambia.Text.Equals(""))
+                    lbRespM.Text = "Se debe ingresar el nuevo correo/teléfono/contraseña";
+                else
+                    lbRespM.Text = modifica(dlCambia.SelectedItem.Text, txCambia.Text);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         protected void dlDepto_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,12 +172,19 @@ namespace AsesoriasWEB
 
         protected void btAgregar_Click(object sender, EventArgs e)
         {
-            int cu = Int32.Parse(Session["cu"].ToString());
-            String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
-            if (verificaTabla(cu, idMateria))
-                lbRespMat.Text = altaMat(cu, idMateria);
-            else
-                lbRespMat.Text = "Ya tiene ésta materia dada de alta";
+            try
+            {
+                int cu = Int32.Parse(Session["cu"].ToString());
+                String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
+                if (verificaTabla(cu, idMateria))
+                    lbRespMat.Text = altaMat(cu, idMateria);
+                else
+                    lbRespMat.Text = "Ya tiene ésta materia dada de alta";
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public String bajaMat(int cu, String idMateria)
@@ -191,9 +205,16 @@ namespace AsesoriasWEB
 
         protected void btQuitaMat_Click(object sender, EventArgs e)
         {
-            int cu = Int32.Parse(Session["cu"].ToString());
-            String idMateria = encuentraIdMateria(dlMisMaterias.SelectedItem.Text);
-            lbRespMat.Text = bajaMat(cu, idMateria);
+            try
+            {
+                int cu = Int32.Parse(Session["cu"].ToString());
+                String idMateria = encuentraIdMateria(dlMisMaterias.SelectedItem.Text);
+                lbRespMat.Text = bajaMat(cu, idMateria);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public String quitaHorario(int cu, String dia, String hora)
@@ -214,11 +235,18 @@ namespace AsesoriasWEB
 
         protected void btQuita_Click(object sender, EventArgs e)
         {
-            String dia = dlHorario.SelectedItem.Text;
-            int primerEspacio = dia.IndexOf(" ");
-            String hora = dia.Substring(primerEspacio + 1, dia.Length - primerEspacio-1);
-            dia = dia.Substring(0, primerEspacio);
-            lbRespH.Text = quitaHorario(Int32.Parse(Session["cu"].ToString()), dia, hora);
+            try
+            {
+                String dia = dlHorario.SelectedItem.Text;
+                int primerEspacio = dia.IndexOf(" ");
+                String hora = dia.Substring(primerEspacio + 1, dia.Length - primerEspacio - 1);
+                dia = dia.Substring(0, primerEspacio);
+                lbRespH.Text = quitaHorario(Int32.Parse(Session["cu"].ToString()), dia, hora);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         public Boolean verificaHorario(int cu, String dia, String hora)
@@ -248,16 +276,23 @@ namespace AsesoriasWEB
 
         protected void btAgrega_Click(object sender, EventArgs e)
         {
-            if (txDia.Text == null || txDia.Text.Equals("") || txHora.Text == null || txHora.Text.Equals(""))
-                lbRespH.Text = "Existe algún dado faltante";
-            else
+            try
             {
-                int cu = Int32.Parse(Session["cu"].ToString());
-                String dia = txDia.Text, hora = txHora.Text;
-                if (verificaHorario(cu, dia, hora))
-                    lbRespH.Text = altaHorario(cu, dia, hora);
+                if (txDia.Text == null || txDia.Text.Equals("") || txHora.Text == null || txHora.Text.Equals(""))
+                    lbRespH.Text = "Existe algún dado faltante";
                 else
-                    lbRespH.Text = "Este horario ya se encuentra dado de alta";
+                {
+                    int cu = Int32.Parse(Session["cu"].ToString());
+                    String dia = txDia.Text, hora = txHora.Text;
+                    if (verificaHorario(cu, dia, hora))
+                        lbRespH.Text = altaHorario(cu, dia, hora);
+                    else
+                        lbRespH.Text = "Este horario ya se encuentra dado de alta";
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
