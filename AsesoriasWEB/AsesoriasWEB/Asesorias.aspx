@@ -9,27 +9,27 @@
 <body>
     <form id="form1" runat="server">
         Departamento:
-        <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDepto_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
         Materia:
-        <asp:DropDownList ID="dlMateria" runat="server">
+        <asp:DropDownList ID="dlMateria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlMateria_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Asesor:<asp:DropDownList ID="dlAsesor" runat="server">
+        Asesor:<asp:DropDownList ID="dlAsesor" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlAsesor_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Calificaciones del asesor:<asp:GridView ID="GridView1" runat="server">
+        Calificaciones del asesor:<asp:GridView ID="gvCalif" runat="server">
         </asp:GridView>
         <br />
         Reseñas del asesor:<asp:GridView ID="gvResenias" runat="server">
         </asp:GridView>
         <br />
         <br />
-        Fecha:<asp:DropDownList ID="dlDia" runat="server" AutoPostBack="True">
+        Fecha:<asp:DropDownList ID="dlDia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDia_SelectedIndexChanged">
         </asp:DropDownList>
 &nbsp;/
         <asp:DropDownList ID="dlMes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
@@ -47,13 +47,15 @@
         <br />
         <br />
         Descripción:<br />
-        <asp:TextBox ID="TextBox1" runat="server" Height="181px" Width="553px"></asp:TextBox>
+        <asp:TextBox ID="txDescripcion" runat="server" Height="181px" Width="553px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
         <br />
         <br />
         <br />
-        <asp:Button ID="btAsesoria" runat="server" Text="Pedir asesoría" />
+        <asp:Button ID="btAsesoria" runat="server" Text="Pedir asesoría" OnClick="btAsesoria_Click" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btRegresa" runat="server" Text="Regresar" />
+        <asp:Button ID="btRegresa" runat="server" Text="Regresar" OnClick="btRegresa_Click" />
         <br />
         <br />
         <br />

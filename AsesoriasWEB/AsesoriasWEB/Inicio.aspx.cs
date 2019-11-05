@@ -12,7 +12,8 @@ namespace AsesoriasWEB
   { 
     public SqlConnection conectar()
     {
-      SqlConnection con = new SqlConnection("Data Source=112SALAS24;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
+      SqlConnection con = new SqlConnection("Data Source=DESKTOP-285NFBG\\SQLEXPRESS;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
+      //SqlConnection con = new SqlConnection("Data Source=112SALAS24;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
       con.Open();
       return con;
     }
@@ -42,7 +43,7 @@ namespace AsesoriasWEB
     protected void llenarGridView3(GridView gv)
     {
       SqlConnection con = conectar();
-      String query = String.Format("select calificacion, descripcion from review where cuRecibe = {0} and tipo = 'u'", Session["cu"].ToString());
+      String query = String.Format("select calificacion, nombre, descripcion from reviewUsuario, materia where cuRecibe = {0} and tipo = 'a' and materia.idMateria = reviewUsuario.idMateria", Session["cu"].ToString());
       SqlCommand cmd = new SqlCommand(query, con);
       SqlDataReader drd = cmd.ExecuteReader();
       gv.DataSource = drd;
@@ -52,15 +53,66 @@ namespace AsesoriasWEB
     protected void llenarGridView4(GridView gv)
     {
       SqlConnection con = conectar();
-      String query = String.Format("select calificacion, descripcion from review where cuRecibe = {0} and tipo = 'u'", Session["cu"].ToString());
+      String query = String.Format("select calificacion, nombre, descripcion from reviewUsuario, materia where cuRecibe = {0} and tipo = 'u' and materia.idMateria = reviewUsuario.idMateria", Session["cu"].ToString());
       SqlCommand cmd = new SqlCommand(query, con);
       SqlDataReader drd = cmd.ExecuteReader();
       gv.DataSource = drd;
       gv.DataBind();
     }
 
+    public void escribeReseniasAsesor()
+    {
+      SqlConnection con = conectar();
+      String query = String.Format("select cuAsesorado, idMateria from asesoria where estado = 'ac' and fecha < cast (GETDATE() as DATE) and cuAsesor = {0}", Session["cu"].ToString());
+      SqlCommand cmd = new SqlCommand(query, con);
+      SqlDataReader drd = cmd.ExecuteReader();
+      while (drd.Read())
+      {
+        int cuAsesor = Int32.Parse(Session["cu"].ToString());
+        int cuAsesorado = drd.GetInt32(0);
+        String idMateria = drd.GetString(1);
+        String query2 = String.Format("update asesoria set estado = 're' where estado = 'ac' and cuAsesor = {2} and cuAsesorado = {0} and idMateria = '{1}' and fecha < cast (GETDATE() as DATE)", cuAsesorado, idMateria, cuAsesor);
+        SqlCommand cmd2 = new SqlCommand(query2, con);
+        Session["tipo"] = 'u';
+        Session["cu"] = cuAsesorado;
+        Session["idMateria"] = idMateria;
+        drd.Close();
+        con.Close();
+        Response.Redirect("EscribeResenia.aspx");
+      }
+      drd.Close();
+      con.Close();
+    }
+
+    public void escribeReseniasAsesorado()
+    {
+      SqlConnection con = conectar();
+      String query = String.Format("select cuAsesor, idMateria from asesoria where estado = 'ac' and fecha < cast (GETDATE() as DATE) and cuAsesorado = {0}", Session["cu"].ToString());
+      SqlCommand cmd = new SqlCommand(query, con);
+      SqlDataReader drd = cmd.ExecuteReader();
+      if(drd.Read())
+      {
+        int cuAsesorado = Int32.Parse(Session["cu"].ToString());
+        int cuAsesor = drd.GetInt32(0); 
+        String idMateria = drd.GetString(1);
+        String query2 = String.Format("update asesoria set estado = 're' where estado = 'ac' and cuAsesor = {2} and cuAsesorado = {0} and idMateria = '{1}' and fecha < cast (GETDATE() as DATE)", cuAsesorado,idMateria, cuAsesor) ;
+        SqlCommand cmd2 = new SqlCommand(query2, con);
+        Session["tipo"] = 'a';
+        Session["cu"] = cuAsesor;
+        Session["idMateria"] = idMateria;
+        drd.Close();
+        con.Close();
+        Response.Redirect("EscribeResenia.aspx");
+      }
+      drd.Close();
+      con.Close();
+    }
+
+
     protected void Page_Load(object sender, EventArgs e)
     {
+      escribeReseniasAsesor();
+      escribeReseniasAsesorado();
       llenarGridView(gvAsesorado);
       llenarGridView2(gvAsesor);
       llenarGridView3(gvRAsesor);
@@ -69,7 +121,7 @@ namespace AsesoriasWEB
 
     protected void btApuntes_Click(object sender, EventArgs e)
     {
-
+      Response.Redirect("Apuntes.aspx");
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +131,7 @@ namespace AsesoriasWEB
 
     protected void btPide_Click(object sender, EventArgs e)
     {
-
+      Response.Redirect("Asesorias.aspx");
     }
 
     protected void Button2_Click(object sender, EventArgs e)
@@ -90,6 +142,16 @@ namespace AsesoriasWEB
     protected void Button1_Click(object sender, EventArgs e)
     {
       Response.Redirect("ModificaInformacion.aspx");
+    }
+
+    protected void btModificaciones_Click(object sender, EventArgs e)
+    {
+      Response.Redirect("ModificacionesDeAsesorias.aspx");
+    }
+
+    protected void btPeticiones_Click(object sender, EventArgs e)
+    {
+      Response.Redirect("AsesoriasPendientes.aspx");
     }
   }
 }

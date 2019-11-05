@@ -24,13 +24,13 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
     /// <summary>
-    /// DropDownList2 control.
+    /// dlMateria control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+    protected global::System.Web.UI.WebControls.DropDownList dlMateria;
 
     /// <summary>
     /// Label1 control.
@@ -42,13 +42,13 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.Label Label1;
 
     /// <summary>
-    /// DropDownList1 control.
+    /// dlAsesorado control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+    protected global::System.Web.UI.WebControls.DropDownList dlAsesorado;
 
     /// <summary>
     /// lbCorreo control.
@@ -58,6 +58,15 @@ namespace AsesoriasWEB
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lbCorreo;
+
+    /// <summary>
+    /// lbFechaPedida control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbFechaPedida;
 
     /// <summary>
     /// dlDia control.
@@ -78,6 +87,15 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.DropDownList dlMes;
 
     /// <summary>
+    /// lbHoraProp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbHoraProp;
+
+    /// <summary>
     /// txHora control.
     /// </summary>
     /// <remarks>
@@ -87,6 +105,15 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.TextBox txHora;
 
     /// <summary>
+    /// lbLugarProp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbLugarProp;
+
+    /// <summary>
     /// txLugar control.
     /// </summary>
     /// <remarks>
@@ -94,6 +121,15 @@ namespace AsesoriasWEB
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txLugar;
+
+    /// <summary>
+    /// lbModalidad control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbModalidad;
 
     /// <summary>
     /// dlModalidad control.
@@ -114,13 +150,13 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.Label lbCalif;
 
     /// <summary>
-    /// GridView1 control.
+    /// gvAsesorado control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView1;
+    protected global::System.Web.UI.WebControls.GridView gvAsesorado;
 
     /// <summary>
     /// Button1 control.
@@ -148,6 +184,15 @@ namespace AsesoriasWEB
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button Button3;
+
+    /// <summary>
+    /// lbResp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbResp;
 
     /// <summary>
     /// btRegresa control.

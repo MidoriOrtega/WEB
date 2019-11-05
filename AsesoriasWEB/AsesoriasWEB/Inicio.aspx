@@ -20,13 +20,13 @@
 &nbsp;
             <asp:Button ID="btPide" runat="server" Text="Pedir asesoría" OnClick="btPide_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btPeticiones" runat="server" Text="Peticiones de asesoría pendiente" />
+            <asp:Button ID="btPeticiones" runat="server" Text="Peticiones de asesoría pendiente" OnClick="btPeticiones_Click" />
 &nbsp;<br />
             <br />
 &nbsp;
             <asp:Button ID="btApuntes" runat="server" OnClick="btApuntes_Click" style="margin-left: 0px" Text="Apuntes" Width="197px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btModificaciones" runat="server" style="margin-left: 0px" Text="Modificaciones de asesoría" Width="437px" />
+            <asp:Button ID="btModificaciones" runat="server" style="margin-left: 0px" Text="Modificaciones de asesoría" Width="437px" OnClick="btModificaciones_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <br />

@@ -19,6 +19,8 @@
         <br />
         <asp:Button ID="btCambia" runat="server" OnClick="btCambia_Click" Text="Realizar el cambio" />
         <br />
+        <asp:Label ID="lbRespM" runat="server" Text=" "></asp:Label>
+        <br />
         <br />
         Agregar una materia (dar asesorías):<br />
         Departamento:<asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDepto_SelectedIndexChanged">
@@ -29,7 +31,18 @@
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="btAgregar" runat="server" Text="Agregar" />
+        <asp:Button ID="btAgregar" runat="server" Text="Agregar" OnClick="btAgregar_Click" />
+        &nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
+        Mis materias:
+        <asp:DropDownList ID="dlMisMaterias" runat="server" AutoPostBack="True">
+        </asp:DropDownList>
+        <br />
+        <asp:Button ID="btQuitaMat" runat="server" OnClick="btQuitaMat_Click" Text="Quitar" />
+        <br />
+        <asp:Label ID="lbRespMat" runat="server" Text=" "></asp:Label>
+        <br />
         <br />
         <br />
         Modificar horario actual<br />
@@ -38,14 +51,18 @@
         <asp:DropDownList ID="dlHorario" runat="server" AutoPostBack="True">
         </asp:DropDownList>
         <br />
-        <asp:Button ID="btQuita" runat="server" Text="Quitar" />
+        <asp:Button ID="btQuita" runat="server" Text="Quitar" OnClick="btQuita_Click" />
         <br />
         <br />
-        Agregar horario:
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        Agregar horario:<br />
+        Día:
+        <asp:TextBox ID="txDia" runat="server"></asp:TextBox>
+        &nbsp; Hora:<asp:TextBox ID="txHora" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="btAgrega" runat="server" Text="Agregar" />
+        <asp:Button ID="btAgrega" runat="server" Text="Agregar" OnClick="btAgrega_Click" />
         <br />
+        <br />
+        <asp:Label ID="lbRespH" runat="server" Text=" "></asp:Label>
         <br />
         <br />
         <asp:Button ID="Button6" runat="server" Text="Regresar" OnClick="Button6_Click" />

@@ -12,7 +12,8 @@ namespace AsesoriasWEB
   {
     public static SqlConnection conectar()
     {
-      SqlConnection con = new SqlConnection("Data Source=112SALAS24;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
+      SqlConnection con = new SqlConnection("Data Source=DESKTOP-285NFBG\\SQLEXPRESS;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
+      //SqlConnection con = new SqlConnection("Data Source=112SALAS24;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
       con.Open();
       return con;
     }
@@ -39,13 +40,16 @@ namespace AsesoriasWEB
         lbResp.Text = "Falta alguno de los datos.";
       else
       {
-        if (verificaContra(txUsuario.Text, txContra.Text))
+        try
         {
-          Session["cu"] = txUsuario.Text;
-          Response.Redirect("Inicio.aspx");
-        }
-        else
-          lbResp.Text = "Alguno de los datos es incorrecto.";
+          if (verificaContra(txUsuario.Text, txContra.Text))
+          {
+            Session["cu"] = txUsuario.Text;
+            Response.Redirect("Inicio.aspx");
+          }
+          else
+            lbResp.Text = "Alguno de los datos es incorrecto.";
+        }catch (Exception ex) { lbResp.Text = "La clave unica debe ser un numero"; }
       }
     }
 

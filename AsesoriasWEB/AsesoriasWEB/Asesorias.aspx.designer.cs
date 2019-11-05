@@ -51,13 +51,13 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.DropDownList dlAsesor;
 
     /// <summary>
-    /// GridView1 control.
+    /// gvCalif control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView1;
+    protected global::System.Web.UI.WebControls.GridView gvCalif;
 
     /// <summary>
     /// gvResenias control.
@@ -114,13 +114,22 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.DropDownList dlModalidad;
 
     /// <summary>
-    /// TextBox1 control.
+    /// txDescripcion control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox1;
+    protected global::System.Web.UI.WebControls.TextBox txDescripcion;
+
+    /// <summary>
+    /// lbResp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbResp;
 
     /// <summary>
     /// btAsesoria control.
