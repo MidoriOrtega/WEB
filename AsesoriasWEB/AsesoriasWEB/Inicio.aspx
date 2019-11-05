@@ -31,9 +31,9 @@
             <br />
             <br />
 &nbsp;
-            <asp:Button ID="Button1" runat="server" Text="Modificar mi información" />
+            <asp:Button ID="Button1" runat="server" Text="Modificar mi información" OnClick="Button1_Click" />
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Dar de alta una materia" Width="327px" />
+            <asp:Button ID="Button2" runat="server" Text="Dar de alta una materia" Width="327px" OnClick="Button2_Click" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Reseñas de asesorías dadas:"></asp:Label>

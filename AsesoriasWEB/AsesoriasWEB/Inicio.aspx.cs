@@ -17,10 +17,12 @@ namespace AsesoriasWEB
       return con;
     }
 
+
+
     protected void llenarGridView(GridView gv)
     {
       SqlConnection con = conectar();
-      String query = String.Format("select q1.fecha, q1.hora, q1.lugar,q3.nombre as 'Asesor', q2.nombre as 'Materia', q1.modalidad from(select estado, fecha, hora, lugar, modalidad, cuAsesorado from asesoria where cuAsesorado = {0}) as q1, (select nombre, cuAsesorado, hora from materia, asesoria where cuAsesorado = {0} and materia.idMateria = asesoria.idMateria) as q2, (select nombre, cuAsesorado, hora from usuario, asesoria where cuAsesorado = {0} and cuAsesor = cu) as q3 where q1.cuAsesorado = {0} and q2.cuAsesorado = {0} and q3.cuAsesorado = {0} and q1.hora = q2.hora and q3.hora = q2.hora and q1.estado = 'ac'", Session["cu"].ToString());
+      String query = String.Format("select q1.fecha, q1.hora, q1.lugar,q3.nombre as 'Asesor', q2.nombre as 'Materia', q1.modalidad from(select estado, fecha, hora, lugar, modalidad, cuAsesorado from asesoria where cuAsesorado = {0}) as q1, (select nombre, cuAsesorado, hora, fecha from materia, asesoria where cuAsesorado = {0} and materia.idMateria = asesoria.idMateria) as q2, (select nombre, cuAsesorado, hora, fecha from usuario, asesoria where cuAsesorado = {0} and cuAsesor = cu) as q3 where q1.cuAsesorado = {0} and q2.cuAsesorado = {0} and q3.cuAsesorado = {0} and q1.hora = q2.hora and q3.hora = q2.hora and q1.fecha = q2.fecha and q3.fecha = q2.fecha and q1.estado = 'ac'", Session["cu"].ToString());
       SqlCommand cmd = new SqlCommand(query, con);
       SqlDataReader drd = cmd.ExecuteReader();
       gv.DataSource = drd;
@@ -30,7 +32,7 @@ namespace AsesoriasWEB
     protected void llenarGridView2(GridView gv)
     {
       SqlConnection con = conectar();
-      String query = String.Format("select q1.fecha, q1.hora, q1.lugar,q3.nombre as 'Asesorado', q2.nombre as 'Materia', q1.modalidad from(select estado, fecha, hora, lugar, modalidad, cuAsesor from asesoria where cuAsesor = 181272) as q1, (select nombre, cuAsesor, hora from materia, asesoria where cuAsesor = {0} and materia.idMateria = asesoria.idMateria) as q2, (select nombre, cuAsesor, hora from usuario, asesoria where cuAsesor ={0} and cuAsesorado = cu) as q3 where q1.cuAsesor = {0} and q2.cuAsesor = {0} and q3.cuAsesor = {0} and q1.hora = q2.hora and q3.hora = q2.hora and q1.estado = 'ac'", Session["cu"].ToString());
+      String query = String.Format("select q1.fecha, q1.hora, q1.lugar,q3.nombre as 'Asesorado', q2.nombre as 'Materia', q1.modalidad from(select estado, fecha, hora, lugar, modalidad, cuAsesor from asesoria where cuAsesor = 181272) as q1, (select nombre, cuAsesor, hora, fecha from materia, asesoria where cuAsesor = {0} and materia.idMateria = asesoria.idMateria) as q2, (select nombre, cuAsesor, hora, fecha from usuario, asesoria where cuAsesor ={0} and cuAsesorado = cu) as q3 where q1.cuAsesor = {0} and q2.cuAsesor = {0} and q3.cuAsesor = {0} and q1.hora = q2.hora and q3.hora = q2.hora and q1.fecha = q2.fecha and q3.fecha = q2.fecha and q1.estado = 'ac'", Session["cu"].ToString());
       SqlCommand cmd = new SqlCommand(query, con);
       SqlDataReader drd = cmd.ExecuteReader();
       gv.DataSource = drd;
@@ -78,6 +80,16 @@ namespace AsesoriasWEB
     protected void btPide_Click(object sender, EventArgs e)
     {
 
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+      Response.Redirect("AltaMateria.aspx");
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+      Response.Redirect("ModificaInformacion.aspx");
     }
   }
 }

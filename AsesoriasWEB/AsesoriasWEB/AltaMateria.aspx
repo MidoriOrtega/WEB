@@ -10,21 +10,27 @@
     <form id="form1" runat="server">
         <p>
             Departamento:
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True">
             </asp:DropDownList>
         </p>
         <p>
             Clave de la materia:
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txClave" runat="server"></asp:TextBox>
         </p>
         <p>
             Nombre de la materia:
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txNombre" runat="server"></asp:TextBox>
         </p>
         <p>
-            <asp:Button ID="btAlta" runat="server" Text="Dar de alta" />
+            <asp:Label ID="Label1" runat="server" Text="La clave de la materia se puede encontrar en tu plan de estudios"></asp:Label>
+&nbsp;o en tu horario en Grace</p>
+        <p>
+            <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
+        </p>
+        <p>
+            <asp:Button ID="btAlta" runat="server" Text="Dar de alta" OnClick="btAlta_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btRegresar" runat="server" Text="Regresar" />
+            <asp:Button ID="btRegresar" runat="server" Text="Regresar" OnClick="btRegresar_Click" />
         </p>
         <p>
             <asp:Label ID="lbResultado" runat="server" Text=" "></asp:Label>
