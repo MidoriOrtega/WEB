@@ -10,20 +10,20 @@
     <form id="form1" runat="server">
         <div>
             <br />
-            Clave única:
+            Clave única:&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txCU" runat="server"></asp:TextBox>
             <br />
             <br />
-            Nombre:<asp:TextBox ID="txNombre" runat="server"></asp:TextBox>
+            Nombre:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txNombre" runat="server"></asp:TextBox>
             <br />
             <br />
-            Teléfono:<asp:TextBox ID="txTel" runat="server"></asp:TextBox>
+            Teléfono:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txTel" runat="server"></asp:TextBox>
             <br />
             <br />
-            Correo:<asp:TextBox ID="txCorreo" runat="server"></asp:TextBox>
+            Correo:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txCorreo" runat="server"></asp:TextBox>
             <br />
             <br />
-            Contraseña:<asp:TextBox ID="txContra" TextMode="Password" runat="server"></asp:TextBox>
+            Contraseña:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txContra" TextMode="Password" runat="server"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="btAlta" runat="server" Text="Darse de alta" OnClick="btAlta_Click" />
@@ -31,7 +31,7 @@
             <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btRegresa" runat="server" Text="Regresar a iniciar sesión" OnClick="btRegresa_Click" />
+            <asp:Button ID="btRegresa" runat="server" Text="Regresar a inicio de sesión" OnClick="btRegresa_Click" />
             <br />
         </div>
     </form>

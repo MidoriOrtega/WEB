@@ -9,56 +9,57 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Materia:<asp:DropDownList ID="dlMateria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlMateria_SelectedIndexChanged">
+            <br />
+            Materia:&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="dlMateria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlMateria_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Asesorado:"></asp:Label>
+            &nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="dlAsesorado" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlAsesorado_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <br />
-            correo del asesorado:&nbsp;&nbsp;&nbsp; <asp:Label ID="lbCorreo" runat="server" Text=" "></asp:Label>
+            Correo del asesorado:&nbsp;&nbsp;&nbsp; <asp:Label ID="lbCorreo" runat="server" Text=" "></asp:Label>
             <br />
             <br />
-            Fecha pedida:
+            Fecha pedida:&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lbFechaPedida" runat="server" Text=" "></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Fecha a proponer:<asp:DropDownList ID="dlDia" runat="server" AutoPostBack="True">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Fecha a proponer:&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="dlDia" runat="server" AutoPostBack="True">
             </asp:DropDownList>
-&nbsp;/
+&nbsp;&nbsp; /&nbsp;&nbsp;
             <asp:DropDownList ID="dlMes" runat="server" AutoPostBack="True" >
             </asp:DropDownList>
             <br />
             <br />
-            Hora propuesta:
+            Hora propuesta:&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="lbHoraProp" runat="server" Text=" "></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Hora a proponer:<asp:TextBox ID="txHora" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Hora a proponer:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txHora" runat="server"></asp:TextBox>
             <br />
             <br />
-            Lugar propuesto:
-            <asp:Label ID="lbLugarProp" runat="server" Text=" "></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lugar a proponer: <asp:TextBox ID="txLugar" runat="server"></asp:TextBox>
+            Lugar propuesto:&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lbLugarProp" runat="server" Text=" "></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lugar a proponer:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txLugar" runat="server"></asp:TextBox>
             <br />
             <br />
-            Modalidad pedida:&nbsp; <asp:Label ID="lbModalidad" runat="server" Text=" "></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Modalidad propuesta:<asp:DropDownList ID="dlModalidad" runat="server" AutoPostBack="True">
+            Modalidad pedModalidad pedida:&nbsp;&nbsp;&nbsp; <asp:Label ID="lbModalidad" runat="server" Text=" "></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Modalidad propuesta:&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="dlModalidad" runat="server" AutoPostBack="True">
             </asp:DropDownList>
             <br />
             <br />
-            Calificación del asesorado:
-            <asp:Label ID="lbCalif" runat="server" Text=" "></asp:Label>
+            Calificación del asesorado:&nbsp;&nbsp;&nbsp; <asp:Label ID="lbCalif" runat="server" Text=" "></asp:Label>
             <br />
             <br />
-            Reseñas del asesorado:<asp:GridView ID="gvAsesorado" runat="server">
+            Reseñas del asesorado:&nbsp;&nbsp;&nbsp; <asp:GridView ID="gvAsesorado" runat="server">
             </asp:GridView>
             <br />
+            <br />
             <asp:Button ID="Button1" runat="server" Text="Modificar" OnClick="Button1_Click" />
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" Text="Aceptar" OnClick="Button2_Click" />
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button3" runat="server" Text="Rechazar" OnClick="Button3_Click" />
             <br />
             <br />

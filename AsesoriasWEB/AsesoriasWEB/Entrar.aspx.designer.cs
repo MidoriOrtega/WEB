@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace AsesoriasWEB {
-    
-    
-    public partial class Inicio {
-        
+namespace AsesoriasWEB
+{
+
+
+    public partial class Inicio
+    {
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control txUsuario.
         /// </summary>
@@ -29,7 +31,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txUsuario;
-        
+
         /// <summary>
         /// Control txContra.
         /// </summary>
@@ -38,7 +40,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txContra;
-        
+
         /// <summary>
         /// Control btRegistra.
         /// </summary>
@@ -47,7 +49,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btRegistra;
-        
+
         /// <summary>
         /// Control lbResp.
         /// </summary>
@@ -56,7 +58,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbResp;
-        
+
         /// <summary>
         /// Control btRegristra.
         /// </summary>

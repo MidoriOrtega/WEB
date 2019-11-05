@@ -8,41 +8,45 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        Departamento:
+        <br />
+        Departamento:&nbsp;&nbsp;&nbsp;
         <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDepto_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Materia:
+        Materia:&nbsp;&nbsp;&nbsp;
         <asp:DropDownList ID="dlMateria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlMateria_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Asesor:<asp:DropDownList ID="dlAsesor" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlAsesor_SelectedIndexChanged">
+        Asesor:&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="dlAsesor" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlAsesor_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Calificaciones del asesor:<asp:GridView ID="gvCalif" runat="server">
+        <h3>Calificaciones del asesor:</h3><asp:GridView ID="gvCalif" runat="server">
         </asp:GridView>
         <br />
-        Reseñas del asesor:<asp:GridView ID="gvResenias" runat="server">
+        <h3>Reseñas del asesor:</h3><asp:GridView ID="gvResenias" runat="server">
         </asp:GridView>
         <br />
         <br />
-        Fecha:<asp:DropDownList ID="dlDia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDia_SelectedIndexChanged">
+        Fecha:&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="dlDia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDia_SelectedIndexChanged">
         </asp:DropDownList>
-&nbsp;/
+&nbsp;&nbsp; /&nbsp;&nbsp;
         <asp:DropDownList ID="dlMes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Hora:<asp:TextBox ID="txHora" runat="server"></asp:TextBox>
+        Hora:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txHora" runat="server"></asp:TextBox>
         <br />
         <br />
-        Lugar:<asp:TextBox ID="txLugar" runat="server"></asp:TextBox>
+        Lugar:&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txLugar" runat="server"></asp:TextBox>
         <br />
         <br />
-        Modalidad:<asp:DropDownList ID="dlModalidad" runat="server" AutoPostBack="True">
+        Modalidad:&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="dlModalidad" runat="server" AutoPostBack="True">
         </asp:DropDownList>
         <br />
         <br />
@@ -52,14 +56,11 @@
         <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
         <br />
         <br />
-        <br />
         <asp:Button ID="btAsesoria" runat="server" Text="Pedir asesoría" OnClick="btAsesoria_Click" />
-&nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
+        <br />
         <asp:Button ID="btRegresa" runat="server" Text="Regresar" OnClick="btRegresa_Click" />
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
     </form>
 </body>

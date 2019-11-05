@@ -16,7 +16,7 @@ namespace AsesoriasWEB
             {
                 //SqlConnection con = new SqlConnection("Data Source=DESKTOP-285NFBG\\SQLEXPRESS;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
                 //SqlConnection con = new SqlConnection("Data Source=112SALAS24;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
-                SqlConnection con = new SqlConnection("Driver={SQL Server Native Client 11.0};Server=localhost;Database=usuariosAsesorias; trusted_connection=Yes");
+                SqlConnection con = new SqlConnection("Server=localhost;Database=usuariosAsesorias; trusted_connection=Yes");
                 con.Open();
                 return con;
             }
@@ -55,8 +55,7 @@ namespace AsesoriasWEB
         public Boolean valida()
         {
             Boolean resp = true;
-            if (txClave.Text == null || txClave.Text.Equals("") ||
-            txNombre.Text == null || txNombre.Text.Equals(""))
+            if (txClave.Text == null || txClave.Text.Equals("") || txNombre.Text == null || txNombre.Text.Equals(""))
             {
                 lbResp.Text = "Hace falta alguno de los datos";
                 resp = false;

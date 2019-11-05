@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace AsesoriasWEB {
-    
-    
-    public partial class AltaMateria {
-        
+namespace AsesoriasWEB
+{
+
+
+    public partial class AltaMateria
+    {
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control dlDepto.
         /// </summary>
@@ -29,7 +31,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dlDepto;
-        
+
         /// <summary>
         /// Control txClave.
         /// </summary>
@@ -38,7 +40,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txClave;
-        
+
         /// <summary>
         /// Control txNombre.
         /// </summary>
@@ -47,16 +49,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txNombre;
-        
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Control lbResp.
         /// </summary>
@@ -65,7 +58,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbResp;
-        
+
         /// <summary>
         /// Control btAlta.
         /// </summary>
@@ -74,7 +67,7 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btAlta;
-        
+
         /// <summary>
         /// Control btRegresar.
         /// </summary>
@@ -83,14 +76,5 @@ namespace AsesoriasWEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btRegresar;
-        
-        /// <summary>
-        /// Control lbResultado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbResultado;
     }
 }

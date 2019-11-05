@@ -16,7 +16,7 @@ namespace AsesoriasWEB
             {
                 //SqlConnection con = new SqlConnection("Data Source=DESKTOP-285NFBG\\SQLEXPRESS;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
                 //SqlConnection con = new SqlConnection("Data Source=112SALAS24;Initial Catalog=usuariosAsesorias;User ID=sa;Password=sqladmin");
-                SqlConnection con = new SqlConnection("Driver={SQL Server Native Client 11.0};Server=localhost;Database=usuariosAsesorias; trusted_connection=Yes");
+                SqlConnection con = new SqlConnection("Server=localhost;Database=usuariosAsesorias; trusted_connection=Yes");
                 con.Open();
                 return con;
             }
@@ -205,5 +205,9 @@ namespace AsesoriasWEB
             llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
         }
 
+        protected void btRegresa_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }
