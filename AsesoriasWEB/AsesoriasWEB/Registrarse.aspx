@@ -11,30 +11,27 @@
         <div>
             <br />
             Clave única:
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txCU" runat="server"></asp:TextBox>
             <br />
             <br />
-            Nombre:<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            Nombre:<asp:TextBox ID="txNombre" runat="server"></asp:TextBox>
             <br />
             <br />
-            Teléfono:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            Teléfono:<asp:TextBox ID="txTel" runat="server"></asp:TextBox>
             <br />
             <br />
-            Correo:<asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            Correo:<asp:TextBox ID="txCorreo" runat="server"></asp:TextBox>
             <br />
             <br />
-            Contraseña:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            Contraseña:<asp:TextBox ID="txContra" TextMode="Password" runat="server"></asp:TextBox>
             <br />
             <br />
-            ¿Qué preieres compartir con otros usuarios?<br />
-            <asp:RadioButton ID="Correo" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" />
+            <asp:Button ID="btAlta" runat="server" Text="Darse de alta" OnClick="btAlta_Click" />
             <br />
-            <asp:RadioButton ID="Teléfono" runat="server" />
+            <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Darse de alta" />
-            <br />
-            <asp:Button ID="Button2" runat="server" Text="Regresar a iniciar sesión" />
+            <asp:Button ID="btRegresa" runat="server" Text="Regresar a iniciar sesión" OnClick="btRegresa_Click" />
             <br />
         </div>
     </form>

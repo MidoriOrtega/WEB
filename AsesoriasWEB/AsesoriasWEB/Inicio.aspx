@@ -10,8 +10,12 @@
     <form id="form1" runat="server">
         <div>
             <br />
-            Próximas aserorías:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            Próximas aserorías como asesor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:GridView ID="gvAsesor" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
+            <br />
+            Próximas asesorías como asesorado:<asp:GridView ID="gvAsesorado" runat="server">
+            </asp:GridView>
+            <br />
             <br />
 &nbsp;
             <asp:Button ID="btPide" runat="server" Text="Pedir asesoría" OnClick="btPide_Click" />
@@ -33,11 +37,11 @@
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Reseñas de asesorías dadas:"></asp:Label>
-            <asp:GridView ID="GridView2" runat="server">
+            <asp:GridView ID="gvRAsesor" runat="server">
             </asp:GridView>
             <br />
             <asp:Label ID="Label2" runat="server" Text="Reseñas de asesorías tomadas:"></asp:Label>
-            <asp:GridView ID="GridView3" runat="server">
+            <asp:GridView ID="gvRAsesorado" runat="server">
             </asp:GridView>
             <br />
             <br />

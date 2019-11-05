@@ -12,14 +12,16 @@
         Clave única:<asp:TextBox ID="txUsuario" runat="server"></asp:TextBox>
         <br />
         <br />
-        Contraseña:<asp:TextBox ID="txContra" runat="server"></asp:TextBox>
+        Contraseña:<asp:TextBox ID="txContra"  TextMode="Password" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="btRegistra" runat="server" Text="Iniciar sesión" />
+        <asp:Button ID="btRegistra" runat="server" Text="Iniciar sesión" OnClick="btRegistra_Click" />
+        <br />
+        <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
         <br />
         <br />
         ¿No tienes una cuenta?
-        <asp:Button ID="btRegristra" runat="server" Text="Regístrate" />
+        <asp:Button ID="btRegristra" runat="server" Text="Regístrate" OnClick="btRegristra_Click" />
     </form>
 </body>
 </html>
