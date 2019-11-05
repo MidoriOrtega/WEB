@@ -41,7 +41,7 @@ namespace AsesoriasWEB
             dlMateria.Items.Clear();
             llenaCombo2(dlMateria);
         }
-
+        
         public void llenaCombo2(DropDownList cb)
         {
             SqlConnection con = conectar();
@@ -75,7 +75,7 @@ namespace AsesoriasWEB
                 llenaReseniasAsesor(gvResenias, cu);
                 llenaCalificacionesAsesor(gvCalif, cu);
             }
-        }
+        }        
 
         public void llenaCombo4(DropDownList cb)
         {
