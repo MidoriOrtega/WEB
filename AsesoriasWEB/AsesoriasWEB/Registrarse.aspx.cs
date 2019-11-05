@@ -88,8 +88,15 @@ namespace AsesoriasWEB
 
         protected void btAlta_Click(object sender, EventArgs e)
         {
-            if (valida())
-                lbResp.Text = alta(Int32.Parse(txCU.Text), txNombre.Text, txCorreo.Text, txTel.Text, txContra.Text);
+            try
+            {
+                if (valida())
+                    lbResp.Text = alta(Int32.Parse(txCU.Text), txNombre.Text, txCorreo.Text, txTel.Text, txContra.Text);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         protected void btRegresa_Click(object sender, EventArgs e)

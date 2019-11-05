@@ -88,15 +88,23 @@ namespace AsesoriasWEB
 
         protected void btAlta_Click(object sender, EventArgs e)
         {
-            lbResp.Text = txClave.Text;
-            if (valida()) {
-                if (verificaClave(txClave.Text))
-                    lbResp.Text = alta(txClave.Text, dlDepto.SelectedItem.Text, txNombre.Text);
+            try
+            {
+                lbResp.Text = txClave.Text;
+                if (valida())
+                {
+                    if (verificaClave(txClave.Text))
+                        lbResp.Text = alta(txClave.Text, dlDepto.SelectedItem.Text, txNombre.Text);
+                    else
+                        lbResp.Text = "Ya existe una materia con la clave proporcionada";
+                }
                 else
-                    lbResp.Text = "Ya existe una materia con la clave proporcionada";
+                    lbResp.Text = "Los campos no están llenos";
             }
-            else
-                lbResp.Text = "Los campos no están llenos";
+            catch (Exception ex)
+            {
+
+            }
         }
     
         protected void btRegresar_Click(object sender, EventArgs e)

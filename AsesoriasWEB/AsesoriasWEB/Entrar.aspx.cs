@@ -45,24 +45,31 @@ namespace AsesoriasWEB
 
         protected void btRegistra_Click(object sender, EventArgs e)
         {
-            if (txUsuario.Text == null || txContra.Text == null || txUsuario.Text.Equals("") || txContra.Text.Equals(""))
-                lbResp.Text = "Hace falta alguno de los datos";
-            else
+            try
             {
-                try
+                if (txUsuario.Text == null || txContra.Text == null || txUsuario.Text.Equals("") || txContra.Text.Equals(""))
+                    lbResp.Text = "Hace falta alguno de los datos";
+                else
                 {
-                    if (verificaContra(txUsuario.Text, txContra.Text))
+                    try
                     {
-                        Session["cu"] = txUsuario.Text;
-                        Response.Redirect("Inicio.aspx");
+                        if (verificaContra(txUsuario.Text, txContra.Text))
+                        {
+                            Session["cu"] = txUsuario.Text;
+                            Response.Redirect("Inicio.aspx");
+                        }
+                        else
+                            lbResp.Text = "Hay algún dato incorrecto";
                     }
-                    else
-                        lbResp.Text = "Hay algún dato incorrecto";
+                    catch (Exception ex)
+                    {
+                        lbResp.Text = "La clave única debe ser un número";
+                    }
                 }
-                catch (Exception ex)
-                {
-                    lbResp.Text = "La clave única debe ser un número";
-                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

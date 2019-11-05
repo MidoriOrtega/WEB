@@ -52,13 +52,20 @@ namespace AsesoriasWEB
             String query = String.Format("select nombre from materia, asesoria where cuAsesor = {0} and estado = 'pa' and materia.idMateria = asesoria.idMateria", cuAsesor);
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader drd = cmd.ExecuteReader();
-            while (drd.Read())
-                cb.Items.Add(drd.GetString(0));
-            if (cb.Items.Count > 0)
+            try
             {
-                cb.SelectedIndex = 0;
-                String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
-                llenaCombo2(dlAsesorado,cuAsesor, idMateria);
+                while (drd.Read())
+                    cb.Items.Add(drd.GetString(0));
+                if (cb.Items.Count > 0)
+                {
+                    cb.SelectedIndex = 0;
+                    String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
+                    llenaCombo2(dlAsesorado, cuAsesor, idMateria);
+                }
+            }
+            catch(Exception ex)
+            {
+
             }
         }
 
@@ -180,48 +187,72 @@ namespace AsesoriasWEB
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = conectar();
-            int cuAsesor = Int32.Parse(Session["cu"].ToString());
-            int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
-            String query = String.Format("update asesoria set estado = 'ac' where cuAsesor = {0} and cuAsesorado ={1} and  fecha = '{2}' and hora = '{3}'",cuAsesor, cuAsesorado,lbFechaPedida.Text, lbHoraProp.Text );
-            SqlCommand cmd = new SqlCommand(query, con);
-            if (cmd.ExecuteNonQuery() > 0)
-                lbResp.Text = "La solicitud ha sido aceptada";
-            else
-                lbResp.Text = "No se ha podido aceptar la solicitud";
-            llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
+            try
+            {
+                SqlConnection con = conectar();
+                String fechaP = lbFechaPedida.Text.Substring(6, 4) + lbFechaPedida.Text.Substring(3, 2) + lbFechaPedida.Text.Substring(0, 2);
+                int cuAsesor = Int32.Parse(Session["cu"].ToString());
+                int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
+                String query = String.Format("update asesoria set estado = 'ac' where cuAsesor = {0} and cuAsesorado ={1} and  fecha = '{2}' and hora = '{3}'", cuAsesor, cuAsesorado, fechaP, lbHoraProp.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                if (cmd.ExecuteNonQuery() > 0)
+                    lbResp.Text = "La solicitud ha sido aceptada";
+                else
+                    lbResp.Text = "No se ha podido aceptar la solicitud";
+                llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            SqlConnection con = conectar();
-            int cuAsesor = Int32.Parse(Session["cu"].ToString());
-            int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
-            String query = String.Format("delete from asesoria where cuAsesor = {0} and cuAsesorado ={1} and  fecha = '{2}' and hora = '{3}'", cuAsesor, cuAsesorado, lbFechaPedida.Text, lbHoraProp.Text);
-            SqlCommand cmd = new SqlCommand(query, con);
-            if (cmd.ExecuteNonQuery() > 0)
-                lbResp.Text = "La solicitud ha sido rechazada";
-            else
-                lbResp.Text = "No se ha podido rechazar la solicitud";
-            llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
+            try
+            {
+                SqlConnection con = conectar();
+                String fechaP = lbFechaPedida.Text.Substring(6, 4) + lbFechaPedida.Text.Substring(3, 2) + lbFechaPedida.Text.Substring(0, 2);
+                int cuAsesor = Int32.Parse(Session["cu"].ToString());
+                int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
+                String query = String.Format("delete from asesoria where cuAsesor = {0} and cuAsesorado ={1} and  fecha = '{2}' and hora = '{3}'", cuAsesor, cuAsesorado, fechaP, lbHoraProp.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                if (cmd.ExecuteNonQuery() > 0)
+                    lbResp.Text = "La solicitud ha sido rechazada";
+                else
+                    lbResp.Text = "No se ha podido rechazar la solicitud";
+                llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = conectar();
-            int cuAsesor = Int32.Parse(Session["cu"].ToString());
-            int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
-            String fecha = (dlDia.SelectedIndex == 0 || dlMes.SelectedIndex == 0)? lbFechaPedida.Text : DateTime.Now.ToString("yyyy") + dlMes.SelectedIndex + dlDia.SelectedItem.Text;
-            String hora = (txHora.Text == null || txHora.Text.Equals(""))? lbHoraProp.Text : txHora.Text;
-            String lugar = txLugar.Text == null || txLugar.Text.Equals("") ? lbLugarProp.Text : txLugar.Text;
-            String modalidad = dlModalidad.SelectedIndex == 0 ? lbModalidad.Text : dlModalidad.SelectedItem.Text;
-            String query = String.Format("update asesoria set estado = 'pu', fecha = '{0}', hora = '{1}', lugar = '{2}', modalidad = '{3}'   where cuAsesor = {4} and cuAsesorado ={5} and  fecha = '{6}' and hora = '{7}'", fecha, hora, lugar, modalidad, cuAsesor, cuAsesorado, lbFechaPedida.Text, lbHoraProp.Text); ;
-            SqlCommand cmd = new SqlCommand(query, con);
-            if (cmd.ExecuteNonQuery() > 0)
-                lbResp.Text = "La solicitud ha sido modificada";
-            else
-                lbResp.Text = "No se ha podido modificar la solicitud";
-            llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
+            try
+            {
+                SqlConnection con = conectar();
+                int cuAsesor = Int32.Parse(Session["cu"].ToString());
+                int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
+                String fechaP = lbFechaPedida.Text.Substring(6, 4) + lbFechaPedida.Text.Substring(3, 2) + lbFechaPedida.Text.Substring(0, 2);
+                String fecha = (dlDia.SelectedIndex == 0 || dlMes.SelectedIndex == 0) ? fechaP: DateTime.Now.ToString("yyyy") + dlMes.SelectedIndex + dlDia.SelectedItem.Text;
+                String hora = (txHora.Text == null || txHora.Text.Equals("")) ? lbHoraProp.Text : txHora.Text;
+                String lugar = txLugar.Text == null || txLugar.Text.Equals("") ? lbLugarProp.Text : txLugar.Text;
+                String modalidad = dlModalidad.SelectedIndex == 0 ? lbModalidad.Text : dlModalidad.SelectedItem.Text;
+                String query = String.Format("update asesoria set estado = 'pu', fecha = '{0}', hora = '{1}', lugar = '{2}', modalidad = '{3}'   where cuAsesor = {4} and cuAsesorado ={5} and  fecha = '{6}' and hora = '{7}'", fecha, hora, lugar, modalidad, cuAsesor, cuAsesorado, fechaP, lbHoraProp.Text); ;
+                SqlCommand cmd = new SqlCommand(query, con);
+                if (cmd.ExecuteNonQuery() > 0)
+                    lbResp.Text = "La solicitud ha sido modificada";
+                else
+                    lbResp.Text = "No se ha podido modificar la solicitud";
+                llenaCombo(dlMateria, Int32.Parse(Session["cu"].ToString()));
+            }
+            catch (Exception ex)
+            {
+                lbResp.Text = ex.Message;
+            }
         }
 
     }

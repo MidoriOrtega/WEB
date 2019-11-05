@@ -260,16 +260,23 @@ namespace AsesoriasWEB
 
         protected void btAsesoria_Click(object sender, EventArgs e)
         {
-            if (valida())
+            try
             {
-                String fecha = DateTime.Now.ToString("yyyy") + (dlMes.SelectedIndex+1) + dlDia.SelectedItem.Text;
-                int cuAsesor = encuentraIdAsesor(dlAsesor.SelectedItem.Text);
-                int cuAsesorado = Int32.Parse(Session["cu"].ToString());
-                String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
-                if (cuentaAsesorias(cuAsesor, cuAsesorado) < 5)
-                    lbResp.Text = altaAsesoria(fecha, txHora.Text, txLugar.Text, dlModalidad.SelectedItem.Text, "pa", cuAsesor, cuAsesorado, idMateria);
-                else
-                    lbResp.Text = "Sólo se puede tener hasta 5 asesorías pendientes con el mismo asesor";
+                if (valida())
+                {
+                    String fecha = DateTime.Now.ToString("yyyy") + (dlMes.SelectedIndex + 1) + dlDia.SelectedItem.Text;
+                    int cuAsesor = encuentraIdAsesor(dlAsesor.SelectedItem.Text);
+                    int cuAsesorado = Int32.Parse(Session["cu"].ToString());
+                    String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
+                    if (cuentaAsesorias(cuAsesor, cuAsesorado) < 5)
+                        lbResp.Text = altaAsesoria(fecha, txHora.Text, txLugar.Text, dlModalidad.SelectedItem.Text, "pa", cuAsesor, cuAsesorado, idMateria);
+                    else
+                        lbResp.Text = "Sólo se puede tener hasta 5 asesorías pendientes con el mismo asesor";
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

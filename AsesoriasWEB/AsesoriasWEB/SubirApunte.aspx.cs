@@ -122,15 +122,22 @@ namespace AsesoriasWEB
 
         protected void btSubir_Click(object sender, EventArgs e)
         {
-            if (valida())
+            try
             {
-                if (verificaLink(txURL.Text))
+                if (valida())
                 {
-                    String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
-                    lbResp.Text = altaNota(txURL.Text, txProfesor.Text, idMateria);
+                    if (verificaLink(txURL.Text))
+                    {
+                        String idMateria = encuentraIdMateria(dlMateria.SelectedItem.Text);
+                        lbResp.Text = altaNota(txURL.Text, txProfesor.Text, idMateria);
+                    }
+                    else
+                        lbResp.Text = "El url ya se encuentra dado de alta";
                 }
-                else
-                    lbResp.Text = "El url ya se encuentra dado de alta";
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

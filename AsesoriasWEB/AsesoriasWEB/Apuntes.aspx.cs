@@ -109,13 +109,20 @@ namespace AsesoriasWEB
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
-            if (txLink.Text == null || txLink.Text.Equals(""))
-                lbResp.Text = "Por favor introduzca el link de las notas antes de dirigirse a escribir la reseña";
-            else
+            try
             {
-                Session["tipo"] = 'n';
-                Session["url"] = txLink.Text;
-                Response.Redirect("EscribirResenia.aspx");
+                if (txLink.Text == null || txLink.Text.Equals(""))
+                    lbResp.Text = "Por favor introduzca el link de las notas antes de dirigirse a escribir la reseña";
+                else
+                {
+                    Session["tipo"] = 'n';
+                    Session["url"] = txLink.Text;
+                    Response.Redirect("EscribirResenia.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

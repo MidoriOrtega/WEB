@@ -118,14 +118,21 @@ namespace AsesoriasWEB
 
         protected void btHecho_Click(object sender, EventArgs e)
         {
-            int calificacion = Int32.Parse(txCalif.Text);
-            String descripcion = txDescripcion.Text;
-            if (valida())
+            try
             {
-                if (Session["tipo"].ToString().ElementAt(0) == 'n')
-                    lbResp.Text = altaNota(calificacion, descripcion);
-                else
-                    lbResp.Text = altaRUsuario(calificacion, descripcion);
+                int calificacion = Int32.Parse(txCalif.Text);
+                String descripcion = txDescripcion.Text;
+                if (valida())
+                {
+                    if (Session["tipo"].ToString().ElementAt(0) == 'n')
+                        lbResp.Text = altaNota(calificacion, descripcion);
+                    else
+                        lbResp.Text = altaRUsuario(calificacion, descripcion);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
