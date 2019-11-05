@@ -11,23 +11,29 @@
         <div>
             <br />
             URL:
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txURL" runat="server"></asp:TextBox>
             <br />
             <br />
             Departamento:
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDepto_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <br />
-            Materia:<asp:DropDownList ID="DropDownList2" runat="server">
+            Materia:<asp:DropDownList ID="dlMateria" runat="server" AutoPostBack="True">
             </asp:DropDownList>
             <br />
             <br />
             Profesor:
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txProfesor" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Regresar" />
+            <asp:Button ID="btSubir" runat="server" OnClick="btSubir_Click" Text="Subir" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button1" runat="server" Text="Regresar" OnClick="Button1_Click" />
+            <br />
+            <br />
             <br />
         </div>
     </form>

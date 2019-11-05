@@ -94,6 +94,7 @@ namespace AsesoriasWEB
         lbResp.Text = "Los campos no estan llenos";
     }
 
+    
     protected void btRegresar_Click(object sender, EventArgs e)
     {
       Response.Redirect("Inicio.aspx");

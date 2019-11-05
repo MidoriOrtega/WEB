@@ -12,26 +12,28 @@
         <br />
         <br />
         Departamento:
-        <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True">
+        <asp:DropDownList ID="dlDepto" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlDepto_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
         Materia:
-        <asp:DropDownList ID="dlMateria" runat="server">
+        <asp:DropDownList ID="dlMateria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dlMateria_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="gvNotas" runat="server">
         </asp:GridView>
         <br />
-        <asp:Button ID="Button3" runat="server" Text="Regresar" />
+        <asp:Button ID="Button3" runat="server" Text="Regresar" OnClick="Button3_Click" />
+        <br />
+        <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
         <br />
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Subir apunte" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Escribir reseña" />
+        <asp:Button ID="Button2" runat="server" Text="Escribir reseña" OnClick="Button2_Click1" />
         <br />
         Para escribir la reseña inserte el link del apunte aquí:
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txLink" runat="server"></asp:TextBox>
     </form>
 </body>
 </html>

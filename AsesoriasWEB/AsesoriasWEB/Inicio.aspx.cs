@@ -74,7 +74,8 @@ namespace AsesoriasWEB
         String query2 = String.Format("update asesoria set estado = 're' where estado = 'ac' and cuAsesor = {2} and cuAsesorado = {0} and idMateria = '{1}' and fecha < cast (GETDATE() as DATE)", cuAsesorado, idMateria, cuAsesor);
         SqlCommand cmd2 = new SqlCommand(query2, con);
         Session["tipo"] = 'u';
-        Session["cu"] = cuAsesorado;
+        Session["cuEscribe"] = cuAsesor;
+        Session["cuRecibe"] = cuAsesorado;
         Session["idMateria"] = idMateria;
         drd.Close();
         con.Close();
@@ -98,7 +99,8 @@ namespace AsesoriasWEB
         String query2 = String.Format("update asesoria set estado = 're' where estado = 'ac' and cuAsesor = {2} and cuAsesorado = {0} and idMateria = '{1}' and fecha < cast (GETDATE() as DATE)", cuAsesorado,idMateria, cuAsesor) ;
         SqlCommand cmd2 = new SqlCommand(query2, con);
         Session["tipo"] = 'a';
-        Session["cu"] = cuAsesor;
+        Session["cuEscribe"] = cuAsesorado;
+        Session["cuRecibe"] = cuAsesor;
         Session["idMateria"] = idMateria;
         drd.Close();
         con.Close();

@@ -42,13 +42,13 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.DropDownList dlMateria;
 
     /// <summary>
-    /// GridView1 control.
+    /// gvNotas control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.GridView GridView1;
+    protected global::System.Web.UI.WebControls.GridView gvNotas;
 
     /// <summary>
     /// Button3 control.
@@ -58,6 +58,15 @@ namespace AsesoriasWEB
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button Button3;
+
+    /// <summary>
+    /// lbResp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbResp;
 
     /// <summary>
     /// Button1 control.
@@ -78,12 +87,12 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.WebControls.Button Button2;
 
     /// <summary>
-    /// TextBox1 control.
+    /// txLink control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox1;
+    protected global::System.Web.UI.WebControls.TextBox txLink;
   }
 }

@@ -11,16 +11,18 @@
         <div>
             <br />
             Calificación:
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txCalif" runat="server"></asp:TextBox>
             <br />
             <br />
             Descripción:<br />
-&nbsp;<asp:TextBox ID="TextBox2" runat="server" Height="240px" Width="619px"></asp:TextBox>
+&nbsp;<asp:TextBox ID="txDescripcion" runat="server" Height="240px" Width="619px"></asp:TextBox>
+            <br />
+            <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btHecho" runat="server" Text="Hecho" />
+            <asp:Button ID="btHecho" runat="server" Text="Hecho" OnClick="btHecho_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="Regresar" />
+            <asp:Button ID="Button1" runat="server" Text="Regresar" OnClick="Button1_Click" />
             <br />
             <br />
         </div>

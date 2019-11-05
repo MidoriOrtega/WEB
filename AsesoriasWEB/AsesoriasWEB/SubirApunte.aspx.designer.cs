@@ -24,40 +24,58 @@ namespace AsesoriasWEB
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
     /// <summary>
-    /// TextBox1 control.
+    /// txURL control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox1;
+    protected global::System.Web.UI.WebControls.TextBox txURL;
 
     /// <summary>
-    /// DropDownList1 control.
+    /// dlDepto control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+    protected global::System.Web.UI.WebControls.DropDownList dlDepto;
 
     /// <summary>
-    /// DropDownList2 control.
+    /// dlMateria control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+    protected global::System.Web.UI.WebControls.DropDownList dlMateria;
 
     /// <summary>
-    /// TextBox2 control.
+    /// txProfesor control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox2;
+    protected global::System.Web.UI.WebControls.TextBox txProfesor;
+
+    /// <summary>
+    /// lbResp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbResp;
+
+    /// <summary>
+    /// btSubir control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btSubir;
 
     /// <summary>
     /// Button1 control.
