@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace AsesoriasWEB
-{
-
-
-    public partial class AsesoriasPendientes
-    {
-
+namespace AsesoriasWEB {
+    
+    
+    public partial class AsesoriasPendientes {
+        
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -22,7 +20,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Control dlMateria.
         /// </summary>
@@ -31,7 +29,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dlMateria;
-
+        
         /// <summary>
         /// Control Label1.
         /// </summary>
@@ -40,7 +38,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-
+        
         /// <summary>
         /// Control dlAsesorado.
         /// </summary>
@@ -49,7 +47,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dlAsesorado;
-
+        
         /// <summary>
         /// Control lbCorreo.
         /// </summary>
@@ -58,7 +56,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCorreo;
-
+        
         /// <summary>
         /// Control lbFechaPedida.
         /// </summary>
@@ -67,7 +65,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbFechaPedida;
-
+        
         /// <summary>
         /// Control dlDia.
         /// </summary>
@@ -76,7 +74,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dlDia;
-
+        
         /// <summary>
         /// Control dlMes.
         /// </summary>
@@ -85,7 +83,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dlMes;
-
+        
         /// <summary>
         /// Control lbHoraProp.
         /// </summary>
@@ -94,7 +92,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbHoraProp;
-
+        
         /// <summary>
         /// Control txHora.
         /// </summary>
@@ -103,7 +101,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txHora;
-
+        
         /// <summary>
         /// Control lbLugarProp.
         /// </summary>
@@ -112,7 +110,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbLugarProp;
-
+        
         /// <summary>
         /// Control txLugar.
         /// </summary>
@@ -121,7 +119,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txLugar;
-
+        
         /// <summary>
         /// Control lbModalidad.
         /// </summary>
@@ -130,7 +128,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbModalidad;
-
+        
         /// <summary>
         /// Control dlModalidad.
         /// </summary>
@@ -139,7 +137,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dlModalidad;
-
+        
         /// <summary>
         /// Control lbCalif.
         /// </summary>
@@ -148,7 +146,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCalif;
-
+        
         /// <summary>
         /// Control gvAsesorado.
         /// </summary>
@@ -157,7 +155,16 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvAsesorado;
-
+        
+        /// <summary>
+        /// Control lblEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstado;
+        
         /// <summary>
         /// Control Button1.
         /// </summary>
@@ -166,7 +173,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
+        
         /// <summary>
         /// Control Button2.
         /// </summary>
@@ -175,7 +182,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-
+        
         /// <summary>
         /// Control Button3.
         /// </summary>
@@ -184,7 +191,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
-
+        
         /// <summary>
         /// Control lbResp.
         /// </summary>
@@ -193,7 +200,7 @@ namespace AsesoriasWEB
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbResp;
-
+        
         /// <summary>
         /// Control btRegresa.
         /// </summary>

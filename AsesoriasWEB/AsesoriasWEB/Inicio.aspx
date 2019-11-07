@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <br />
-            <h3>Próximas aserorías como asesor:</h3>
+            <h3>Próximas asesorías como asesor:</h3>
             <asp:GridView ID="gvAsesor" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
             <br />

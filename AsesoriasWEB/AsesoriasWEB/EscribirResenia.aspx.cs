@@ -28,7 +28,15 @@ namespace AsesoriasWEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          if (Session["cuRecibe"] != null)
+          {
+            String recibe  = encuentraNombre(Int32.Parse(Session["cuRecibe"].ToString()));
+            if (Session["tipo"].ToString() == "u")
+              lbResp.Text = "Una reseña de tu ultima asesoría para tu asesorado " + recibe;
+            else
+              lbResp.Text = "Una reseña de tu ultima asesoría para tu asesor " + recibe;
+          }
+     
         }
 
         public int ultimoIDUsuario()
@@ -95,7 +103,16 @@ namespace AsesoriasWEB
             return resp;
         }
 
-        public String encuentraIdMateria(String nombre)
+    public String encuentraNombre(int cu)
+    {
+      SqlConnection con = conectar();
+      String query = String.Format("select nombre from usuario where cu = {0}", cu);
+      SqlCommand cmd = new SqlCommand(query, con);
+      SqlDataReader drd = cmd.ExecuteReader();
+      drd.Read();
+      return drd.GetString(0);
+    }
+    public String encuentraIdMateria(String nombre)
         {
             SqlConnection con = conectar();
             String query = String.Format("select idMateria from materia where nombre = '{0}'", nombre);

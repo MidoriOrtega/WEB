@@ -43,7 +43,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lugar a proponer:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txLugar" runat="server"></asp:TextBox>
             <br />
             <br />
-            Modalidad pedModalidad pedida:&nbsp;&nbsp;&nbsp; <asp:Label ID="lbModalidad" runat="server" Text=" "></asp:Label>
+            Modalidad pedida:&nbsp;&nbsp;&nbsp; <asp:Label ID="lbModalidad" runat="server" Text=" "></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Modalidad propuesta:&nbsp;&nbsp;&nbsp; <asp:DropDownList ID="dlModalidad" runat="server" AutoPostBack="True">
             </asp:DropDownList>
@@ -54,6 +54,7 @@
             <br />
             Reseñas del asesorado:&nbsp;&nbsp;&nbsp; <asp:GridView ID="gvAsesorado" runat="server">
             </asp:GridView>
+            <asp:Label ID="lblEstado" runat="server" Text="Estado"></asp:Label>
             <br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Modificar" OnClick="Button1_Click" />

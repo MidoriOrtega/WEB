@@ -20,10 +20,12 @@
             <asp:Label ID="lbResp" runat="server" Text=" "></asp:Label>
             <br />
             <asp:Button ID="btHecho" runat="server" Text="Hecho" OnClick="btHecho_Click" />
-            <br />
-            <br />
-            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button1" runat="server" Text="Regresar" OnClick="Button1_Click" />
+            <br />
+            <asp:Label runat="server" Text=" "></asp:Label>
+            <br />
+            <br />
         </div>
     </form>
 </body>

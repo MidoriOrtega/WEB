@@ -28,6 +28,8 @@ namespace AsesoriasWEB
 
         protected void llenarGridView(GridView gv)
         {
+            gv.DataSource = null;
+            gv.DataBind();
             SqlConnection con = conectar();
             String query = String.Format("select q1.fecha, q1.hora, q1.lugar,q3.nombre as 'Asesor', q2.nombre as 'Materia', q1.modalidad from(select estado, fecha, hora, lugar, modalidad, cuAsesorado from asesoria where cuAsesorado = {0}) as q1, (select nombre, cuAsesorado, hora, fecha from materia, asesoria where cuAsesorado = {0} and materia.idMateria = asesoria.idMateria) as q2, (select nombre, cuAsesorado, hora, fecha from usuario, asesoria where cuAsesorado = {0} and cuAsesor = cu) as q3 where q1.cuAsesorado = {0} and q2.cuAsesorado = {0} and q3.cuAsesorado = {0} and q1.hora = q2.hora and q3.hora = q2.hora and q1.fecha = q2.fecha and q3.fecha = q2.fecha and q1.estado = 'ac'", Session["cu"].ToString());
             SqlCommand cmd = new SqlCommand(query, con);
@@ -38,7 +40,9 @@ namespace AsesoriasWEB
 
         protected void llenarGridView2(GridView gv)
         {
-            SqlConnection con = conectar();
+      gv.DataSource = null;
+      gv.DataBind();
+      SqlConnection con = conectar();
             String query = String.Format("select q1.fecha, q1.hora, q1.lugar,q3.nombre as 'Asesorado', q2.nombre as 'Materia', q1.modalidad from(select estado, fecha, hora, lugar, modalidad, cuAsesor from asesoria where cuAsesor = 181272) as q1, (select nombre, cuAsesor, hora, fecha from materia, asesoria where cuAsesor = {0} and materia.idMateria = asesoria.idMateria) as q2, (select nombre, cuAsesor, hora, fecha from usuario, asesoria where cuAsesor ={0} and cuAsesorado = cu) as q3 where q1.cuAsesor = {0} and q2.cuAsesor = {0} and q3.cuAsesor = {0} and q1.hora = q2.hora and q3.hora = q2.hora and q1.fecha = q2.fecha and q3.fecha = q2.fecha and q1.estado = 'ac'", Session["cu"].ToString());
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader drd = cmd.ExecuteReader();
@@ -48,7 +52,9 @@ namespace AsesoriasWEB
 
         protected void llenarGridView3(GridView gv)
         {
-            SqlConnection con = conectar();
+      gv.DataSource = null;
+      gv.DataBind();
+      SqlConnection con = conectar();
             String query = String.Format("select calificacion, nombre, descripcion from reviewUsuario, materia where cuRecibe = {0} and tipo = 'a' and materia.idMateria = reviewUsuario.idMateria", Session["cu"].ToString());
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader drd = cmd.ExecuteReader();
@@ -58,7 +64,9 @@ namespace AsesoriasWEB
 
         protected void llenarGridView4(GridView gv)
         {
-            SqlConnection con = conectar();
+      gv.DataSource = null;
+      gv.DataBind();
+      SqlConnection con = conectar();
             String query = String.Format("select calificacion, nombre, descripcion from reviewUsuario, materia where cuRecibe = {0} and tipo = 'u' and materia.idMateria = reviewUsuario.idMateria", Session["cu"].ToString());
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader drd = cmd.ExecuteReader();
@@ -79,13 +87,14 @@ namespace AsesoriasWEB
                 String idMateria = drd.GetString(1);
                 String query2 = String.Format("update asesoria set estado = 're' where estado = 'ac' and cuAsesor = {2} and cuAsesorado = {0} and idMateria = '{1}' and fecha < cast (GETDATE() as DATE)", cuAsesorado, idMateria, cuAsesor);
                 SqlCommand cmd2 = new SqlCommand(query2, con);
+                cmd2.ExecuteNonQuery(); 
                 Session["tipo"] = 'u';
                 Session["cuEscribe"] = cuAsesor;
                 Session["cuRecibe"] = cuAsesorado;
                 Session["idMateria"] = idMateria;
                 drd.Close();
                 con.Close();
-                Response.Redirect("EscribeResenia.aspx");
+                Response.Redirect("EscribirResenia.aspx");
             }
             drd.Close();
             con.Close();
@@ -102,15 +111,17 @@ namespace AsesoriasWEB
                 int cuAsesorado = Int32.Parse(Session["cu"].ToString());
                 int cuAsesor = drd.GetInt32(0); 
                 String idMateria = drd.GetString(1);
+                drd.Close();
                 String query2 = String.Format("update asesoria set estado = 're' where estado = 'ac' and cuAsesor = {2} and cuAsesorado = {0} and idMateria = '{1}' and fecha < cast (GETDATE() as DATE)", cuAsesorado,idMateria, cuAsesor) ;
                 SqlCommand cmd2 = new SqlCommand(query2, con);
+                cmd2.ExecuteNonQuery();
                 Session["tipo"] = 'a';
                 Session["cuEscribe"] = cuAsesorado;
                 Session["cuRecibe"] = cuAsesor;
                 Session["idMateria"] = idMateria;
-                drd.Close();
+                
                 con.Close();
-                Response.Redirect("EscribeResenia.aspx");
+                Response.Redirect("EscribirResenia.aspx");
             }
             drd.Close();
             con.Close();

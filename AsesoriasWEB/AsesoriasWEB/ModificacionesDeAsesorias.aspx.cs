@@ -174,9 +174,19 @@ namespace AsesoriasWEB
                 int cuAsesorado = Int32.Parse(Session["cu"].ToString());
                 int cuAsesor = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
                 String fechaP = lbFechaPedida.Text.Substring(6, 4) + lbFechaPedida.Text.Substring(3, 2) + lbFechaPedida.Text.Substring(0, 2);
-                String fecha = (dlDia.SelectedIndex == 0 || dlMes.SelectedIndex == 0) ? fechaP : DateTime.Now.ToString("yyyy") + dlMes.SelectedIndex + dlDia.SelectedItem.Text;
+                String fecha = "";
+                if (dlDia.SelectedIndex != 0 && dlMes.SelectedIndex != 0)
+                {
+                  fecha += DateTime.Now.ToString("yyyy");
+                  if (dlMes.SelectedIndex < 10) fecha += "0";
+                  fecha += dlMes.SelectedIndex;
+                  if (dlDia.SelectedItem.Text.Length < 2) fecha += "0";
+                          fecha += dlDia.SelectedItem.Text;
+                }
+
+                fecha = fecha.Equals("")? fechaP :  fecha;
                 String hora = (txHora.Text == null || txHora.Text.Equals("")) ? lbHoraProp.Text : txHora.Text;
-                String lugar = txLugar.Text == null || txLugar.Text.Equals("") ? lbLugarProp.Text : txLugar.Text;
+                String lugar = (txLugar.Text == null || txLugar.Text.Equals(""))? lbLugarProp.Text : txLugar.Text;
                 String modalidad = dlModalidad.SelectedIndex == 0 ? lbModalidad.Text : dlModalidad.SelectedItem.Text;
                 String query = String.Format("update asesoria set estado = 'pa', fecha = '{0}', hora = '{1}', lugar = '{2}', modalidad = '{3}'   where cuAsesor = {4} and cuAsesorado ={5} and  fecha = '{6}' and hora = '{7}'", fecha, hora, lugar, modalidad, cuAsesor, cuAsesorado, fechaP, lbHoraProp.Text); ;
                 SqlCommand cmd = new SqlCommand(query, con);

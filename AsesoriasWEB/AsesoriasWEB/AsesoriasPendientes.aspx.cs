@@ -48,6 +48,7 @@ namespace AsesoriasWEB
 
         public void llenaCombo(DropDownList cb, int cuAsesor)
         {
+            cb.Items.Clear();
             SqlConnection con = conectar();
             String query = String.Format("select nombre from materia, asesoria where cuAsesor = {0} and estado = 'pa' and materia.idMateria = asesoria.idMateria", cuAsesor);
             SqlCommand cmd = new SqlCommand(query, con);
@@ -236,13 +237,68 @@ namespace AsesoriasWEB
                 SqlConnection con = conectar();
                 int cuAsesor = Int32.Parse(Session["cu"].ToString());
                 int cuAsesorado = encuentraIdAsesor(dlAsesorado.SelectedItem.Text);
-                String fechaP = lbFechaPedida.Text.Substring(6, 4) + lbFechaPedida.Text.Substring(3, 2) + lbFechaPedida.Text.Substring(0, 2);
-                String fecha = (dlDia.SelectedIndex == 0 || dlMes.SelectedIndex == 0) ? fechaP: DateTime.Now.ToString("yyyy") + dlMes.SelectedIndex + dlDia.SelectedItem.Text;
+                String fechaP = lbFechaPedida.Text.Substring(6, 4) +lbFechaPedida.Text.Substring(3, 2)+ lbFechaPedida.Text.Substring(0, 2);
+                String fecha = "";
+                String mes = "";
+                if (dlDia.SelectedIndex != 0 && dlMes.SelectedIndex != 0)
+                {
+                  fecha += DateTime.Now.ToString("yyyy");
+                  switch (dlMes.SelectedItem.ToString())
+                  {
+                    case "Enero":
+                      mes = "01";
+                      break;
+                    case "Febrero":
+                      mes = "02";
+                      break;
+                    case "Marzo":
+                      mes = "03";
+                      break;
+                    case "Abril":
+                      mes = "04";
+                      break;
+                    case "Mayo":
+                      mes = "05";
+                      break;
+                    case "Junio":
+                      mes = "06";
+                      break;
+                    case "Julio":
+                      mes = "07";
+                      break;
+                    case "Agosto":
+                      mes = "08";
+                      break;
+                    case "Septiembre":
+                      mes = "09";
+                      break;
+                    case "Octubre":
+                      mes = "10";
+                      break;
+                    case "Noviembre":
+                      mes = "11";
+                      break;
+                    case "Diciembre":
+                      mes = "12";
+                      break;
+                    default:
+                      mes = "NO JALA";
+                      break;
+
+                  }
+                    fecha += mes;
+                  if (dlDia.SelectedItem.Text.Length < 2) fecha += "0";
+                    fecha += dlDia.SelectedItem.Text;
+                 }
+                lblEstado.Text = "Nueva fecha: "+ fecha +" Fecha vieja: "+ fechaP + " "+cuAsesor+" "+cuAsesorado+" "+lbHoraProp.Text;
+
+                fecha = fecha.Equals("") ? fechaP : fecha;
                 String hora = (txHora.Text == null || txHora.Text.Equals("")) ? lbHoraProp.Text : txHora.Text;
-                String lugar = txLugar.Text == null || txLugar.Text.Equals("") ? lbLugarProp.Text : txLugar.Text;
+                lblEstado.Text += " Hora: " + hora;
+                String lugar = (txLugar.Text == null || txLugar.Text.Equals("")) ? lbLugarProp.Text : txLugar.Text;
                 String modalidad = dlModalidad.SelectedIndex == 0 ? lbModalidad.Text : dlModalidad.SelectedItem.Text;
-                String query = String.Format("update asesoria set estado = 'pu', fecha = '{0}', hora = '{1}', lugar = '{2}', modalidad = '{3}'   where cuAsesor = {4} and cuAsesorado ={5} and  fecha = '{6}' and hora = '{7}'", fecha, hora, lugar, modalidad, cuAsesor, cuAsesorado, fechaP, lbHoraProp.Text); ;
-                SqlCommand cmd = new SqlCommand(query, con);
+                String query = String.Format("update asesoria set estado = 'pu', fecha = '{0}', hora = '{1}', lugar = '{2}', modalidad = '{3}'   where cuAsesor = {4} and cuAsesorado ={5} and  fecha = '{6}' and hora = '{7}' ", fecha, hora, lugar, modalidad, cuAsesor, cuAsesorado, fechaP, lbHoraProp.Text) ;
+        SqlCommand cmd = new SqlCommand(query, con);
                 if (cmd.ExecuteNonQuery() > 0)
                     lbResp.Text = "La solicitud ha sido modificada";
                 else
